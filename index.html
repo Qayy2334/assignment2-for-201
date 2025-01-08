@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Penang</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function showSection(event, sectionId) {
+        event.preventDefault(); // 阻止默认行为
+
+        // 隐藏所有内容部分
+        var sections = document.querySelectorAll(".content-section");
+        sections.forEach(function (section) {
+          section.style.display = "none";
+        });
+
+        // 显示所选部分
+        document.getElementById(sectionId).style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="con">
+      <div style="position: fixed"></div>
+      <header>
+        <div class="logo">
+          <a href="#">
+            <img src="LovePENANG-1.png" width="1010" alt="Love Penang Logo" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li class="title1">Penang Island</li>
+            <li><a href="#" onclick="showSection(event, 'home')">Home</a></li>
+            <li><a href="#" onclick="showSection(event, 'food')">Food</a></li>
+            <li>
+              <a href="#" onclick="showSection(event, 'scenic-spots')"
+                >Scenic Spots</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showSection(event, 'hotels')">Hotels</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="main">
+        <div id="home" class="content-section">
+          <div class="carousel">
+            <div class="carousel-container">
+              <img src="curtis-crest-the-habitat.jpg" alt="Image 1" />
+              <img src="kapitan-keling-mosque.jpg" alt="Image 2" />
+              <img src="tropical-spice-garden.jpg" alt="Image 3" />
+            </div>
+            <div class="carousel-nav">
+              <button id="prev">&#10094;</button>
+              <button id="next">&#10095;</button>
+            </div>
+          </div>
+          <script>
+            let currentIndex = 0;
+            const carouselContainer = document.querySelector(
+              ".carousel-container"
+            );
+            const totalImages =
+              document.querySelectorAll(".carousel img").length;
+  
+            function showImage(index) {
+              carouselContainer.style.transform = `translateX(${
+                -index * 100
+              }%)`;
+            }
+  
+            document
+              .getElementById("prev")
+              .addEventListener("click", function () {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                showImage(currentIndex);
+              });
+  
+            document
+              .getElementById("next")
+              .addEventListener("click", function () {
+                currentIndex = (currentIndex + 1) % totalImages;
+                showImage(currentIndex);
+              });
+  
+            // Initialize carousel display
+            showImage(currentIndex);
+          </script>
+  
+              <h2>Penang Introduction</h2>
+              <h3>Penang Island</h3>
+              <p>
+                Penang State, referred to as "Penang", is one of the thirteen
+                federal states of Malaysia. It is located in the northwest of
+                Malaysia, with an area of ​​1,049 square kilometers. The state is
+                divided into two parts by the Penang Strait: Penang Island and
+                Seberang Perai. The total population is 1,766,800. The state
+                capital, George Town, is an important port city and the second
+                largest city in Malaysia after the capital Kuala Lumpur.
+              </p>
+              <h3>location</h3>
+              <p>
+                Penang (English: Penang: Malay: Pulau Pinang), formerly known as
+                Penang Island, referred to as Penang is one of the thirteen federal
+                states of Malaysia, located on the northwest side of the Malayan
+                Peninsula. by Bounded by the Penang Strait, Penang is divided into
+                two parts: Penang Island and Seberang Perai. Among them, the eastern
+                and northern parts of Seberang Perai and Kedah is adjacent to the
+                state of Perak in the south; while Penang Island is separated from
+                the Indonesian island of Sumatra in the west. Strait of Malacca
+                Opposite. Penang is 357 kilometers from the capital Kuala Lumpur.
+              </p>
+              <h3>History of Penang</h3>
+              <p>
+                Penang has a long history and multicultural heritage. Its history
+                can be traced back to BC, when it was an island inhabited by
+                indigenous peoples in the early days. The real turning point in
+                history came in 1786, when Colonel Francis Light of the British East
+                India Company successfully acquired Penang Island from the Sultan of
+                Malacca and made it an important British colony in Southeast Asia.
+                Penang has since become a strategic location and a British trade and
+                shipping center, attracting a large number of immigrants from China,
+                India and the Malay Archipelago, especially the Chinese, who occupy
+                an important position in Penang's economic and social life. Entering
+                the 19th century, Penang experienced a golden period of development,
+                especially driven by the rubber, tin and spice trades, and its
+                economy prospered. With the growth of the immigrant population,
+                Penang gradually formed a diversified social structure, especially
+                the Chinese groups from Fujian and Guangdong made great
+                contributions to Penang's culture and economy. At the same time,
+                George Town also built many commercial buildings and colonial-style
+                residences during this period, becoming a city with a strong
+                historical atmosphere. However, during World War II, Penang was
+                occupied by Japan, and from 1941 to 1945, the island experienced
+                great changes. After the war, Penang returned to British control and
+                became part of the newly formed Malaysia in 1957 with the
+                independence of Malaysia. In the mid-20th century, Penang
+                transformed into an industrialized city and became a center for
+                manufacturing and electronics, attracting a large amount of foreign
+                investment. Today, Penang is not only an economic center of
+                Malaysia, but also attracts tourists from all over the world with
+                its rich history and culture. As a world cultural heritage site,
+                George Town showcases Penang's multicultural blend and historical
+                charm. The history of Penang is a process of cultural integration of
+                various ethnic groups in China, Britain and Malaysia. It not only
+                carries the traditional colonial history, but also provides a rich
+                cultural background for modernization and globalization, becoming a
+                unique tourism and economic center.
+              </p>
+      </div>
+  
+
+        <div id="food" class="content-section">
+          <div class="container">
+            <!-- 每个卡片的结构 -->
+            <a href="hokkien-mee.html" class="card">
+              <img src="OIP (1).jpg" alt="Penang Hokkien Mee">
+              <div class="label1">Hokkien Mee</div>
+            </a>
+        
+            <a href="Penang Laksa.html" class="card">
+              <img src="OIP (2).jpg" alt="Penang Laksa">
+              <div class="label2">Penang Laksa</div>
+            </a>
+        
+            <a href="Penang Satay.html" class="card">
+              <img src="OIP (3).jpg" alt="Penang Satay">
+              <div class="label3">Penang Satay</div>
+            </a>
+        
+            <a href="Penang Hainanese Chicken Rice.html" class="card">
+              <img src="OIP (4).jpg" alt="Penang Hainanese Chicken Rice">
+              <div class="label4">Penang Hainanese Chicken Rice</div>
+            </a>
+          </div>
+        </div> <!-- 这里添加了闭合的 div -->
+        
+        
+
+        <div id="scenic-spots" class="content-section">
+          <h2>Scenic Spots</h2>
+          <div class="container">
+            <a href="https://www.youtube.com/watch?v=P6Q2hf46VFc" target="_blank" class="spot">
+              <img src="OIP (5).jpg" alt="Tokong Kek Lok Si">
+              <div class="label1">Tokong Kek Lok Si</div>
+            </a>
+        
+            <a href="https://www.youtube.com/watch?v=7rzBlOnRWz0" target="_blank" class="spot">
+              <img src="OIP (6).jpg" alt="Penang Hill">
+              <div class="label2">Penang Hill</div>
+            </a>
+        
+            <a href="https://www.youtube.com/watch?v=mPEA4mBPGqY" target="_blank" class="spot">
+              <img src="OIP (9).jpg" alt="Penang Satay">
+              <div class="label3">Taman Negara Pulau Pinang</div>
+            </a>
+        
+            <a href="https://www.youtube.com/watch?v=cp0NsYB1gw0" target="_blank" class="spot">
+              <img src="OIP (10).jpg" alt="Penang Hainanese Chicken Rice">
+              <div class="label4">George Town</div>
+            </a>
+          </div>
+        </div>
+
+        <div id="hotels" class="content-section">
+          <div class="hotel-card">
+            <div class="hotel-image">
+              <img src="g-hotel-kelawai.jpg" alt="G Hotel Kelawai" />
+            </div>
+            <div class="hotel-details">
+              <div class="hotel-header">
+                <h2>G Hotel Kelawai</h2>
+              </div>
+              <div class="rating">
+                <span>★★★★☆</span>
+                <span class="review-count">1,035 reviews</span>
+              </div>
+              <ul class="features">
+                <li>🌆 Rooftop pool with city view, outdoor seating</li>
+                <li>🍽️ On-site restaurant, mixed food reviews</li>
+                <li>🏬 Near shopping, dining, hospital</li>
+                <li>🚙 Buggy service available</li>
+                <li>😊 Friendly staff, room allocation errors</li>
+                <li>🛋️ Spacious rooms, exclusive lounge</li>
+              </ul>
+              <div class="actions">
+                <div class="actions">
+                  <a
+                    href="https://www.tripadvisor.com.my/Hotel_Review-g298303-d7306602-Reviews-G_Hotel_Kelawai-George_Town_Penang_Island_Penang.html"
+                    target="_blank"
+                    class="show-prices"
+                    >Visit hotel website</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="hotel-card">
+            <div class="hotel-image">
+              <img src="caption.jpg" alt="Hotel ABC" />
+            </div>
+            <div class="hotel-details">
+              <div class="hotel-header">
+                <h2>Visit hotel website</h2>
+              </div>
+              <div class="rating">
+                <span>★★★★☆</span>
+                <span class="review-count">4804 reviews</span>
+              </div>
+              <ul class="features">
+                <li>📍 Central location, close to landmarks</li>
+                <li>🍳 Complimentary breakfast</li>
+                <li>🛏️ Cozy rooms, budget-friendly</li>
+                <li>🚗 Airport shuttle available</li>
+              </ul>
+              <div class="actions">
+                <a
+                  href="https://www.tripadvisor.com.my/Hotel_Review-g635527-d306935-Reviews-PARKROYAL_Penang_Resort-Batu_Ferringhi_Penang_Island_Penang.html"
+                  target="_blank"
+                  class="show-prices"
+                  >Visit hotel website</a
+                >
+              </div>
+            </div>
+          </div>
+  
+          <!-- 修正后的第三个酒店 -->
+          <div class="hotel-card">
+            <div class="hotel-image">
+              <img src="m-qube-hotel-hostel.jpg" alt="Hotel ABC" />
+            </div>
+            <div class="hotel-details">
+              <div class="hotel-header">
+                <h2>Visit hotel website</h2>
+              </div>
+              <div class="rating">
+                <span>★★★★☆</span>
+                <span class="review-count">892 reviews</span>
+              </div>
+              <ul class="features">
+                <li>📍 Central location, close to landmarks</li>
+                <li>🍳 Complimentary breakfast</li>
+                <li>🛏️ Cozy rooms, budget-friendly</li>
+                <li>🚗 Airport shuttle available</li>
+              </ul>
+              <div class="actions">
+                <a
+                  href="https://www.tripadvisor.com.my/Hotel_Review-g1440256-d10296137-Reviews-M_Qube_Hotel-Gelugor_Penang_Island_Penang.html"
+                  target="_blank"
+                  class="show-prices"
+                  >Visit hotel website</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+  
